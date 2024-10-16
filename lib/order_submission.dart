@@ -21,14 +21,12 @@ class ServiceDetailsScreen extends StatelessWidget {
           'Service Details',
           style: TextStyle(color: AppConstants.orangeColor, fontSize: 18),
         ),
-      
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-           
             Text(
               'Service: $selectedService',
               style: const TextStyle(
@@ -45,26 +43,22 @@ class ServiceDetailsScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-
-           
             TextFormField(
               controller: _locationController,
               decoration: InputDecoration(
                 labelText: 'Location',
                 labelStyle: const TextStyle(color: Colors.grey),
                 filled: true,
-                fillColor: const Color(0xFF2C2C2C), 
+                fillColor: const Color(0xFF2C2C2C),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide.none, 
+                  borderSide: BorderSide.none,
                 ),
                 contentPadding:
                     const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
               ),
             ),
             const SizedBox(height: 20),
-
-           
             TextFormField(
               controller: _timeController,
               decoration: InputDecoration(
@@ -91,7 +85,6 @@ class ServiceDetailsScreen extends StatelessWidget {
               },
             ),
             const SizedBox(height: 20),
-
             Center(
               child: ElevatedButton(
                 onPressed: () {
@@ -116,53 +109,54 @@ class ServiceDetailsScreen extends StatelessWidget {
       ),
     );
   }
-  
-  
-void showSuccessDialog(BuildContext context) {
-  showDialog(
-    context: context,
-    barrierDismissible: false, 
-    builder: (BuildContext context) {
-      return AlertDialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
-          side: BorderSide(color: AppConstants.orangeColor, width: 2),
-        ),
-        title: const Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(Icons.check_circle, color: Colors.green, size: 30), 
-            SizedBox(width: 10), 
-            Text('Order Placed', style: TextStyle(fontWeight: FontWeight.bold)),
-          ],
-        ),
-        content: const Text(
-          'Your cleaning order has been successfully placed!\n\n'
-          'You will receive a confirmation email shortly.',
-          textAlign: TextAlign.center,
-        ),
-        actions: <Widget>[
-          Center(
-            child: TextButton(
-              style: TextButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10), 
-                backgroundColor: Colors.orange, 
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10), 
-                ),
-              ),
-              child: const Text(
-                'OK',
-                style: TextStyle(color: Colors.white), 
-              ),
-              onPressed: () {
-                Navigator.of(context).pop(); 
-              },
-            ),
+
+  void showSuccessDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+            side: BorderSide(color: AppConstants.orangeColor, width: 2),
           ),
-        ],
-      );
-    },
-  );
-}
+          title: const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.check_circle, color: Colors.green, size: 30),
+              SizedBox(width: 10),
+              Text('Order Placed',
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+            ],
+          ),
+          content: const Text(
+            'Your cleaning order has been successfully placed!\n\n'
+            'You will receive a confirmation email shortly.',
+            textAlign: TextAlign.center,
+          ),
+          actions: <Widget>[
+            Center(
+              child: TextButton(
+                style: TextButton.styleFrom(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  backgroundColor: Colors.orange,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                child: const Text(
+                  'OK',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
 }

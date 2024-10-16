@@ -47,13 +47,16 @@ class CleanerSelectionScreen extends StatelessWidget {
   ];
 
   @override
-    @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Select a Cleaner', style: TextStyle(color: AppConstants.orangeColor, fontSize: 18),),
-        backgroundColor: const Color(0xFF212121), // Darker color for the app bar
+          'Select a Cleaner',
+          style: TextStyle(color: AppConstants.orangeColor, fontSize: 18),
+        ),
+        backgroundColor:
+            const Color(0xFF212121), // Darker color for the app bar
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
